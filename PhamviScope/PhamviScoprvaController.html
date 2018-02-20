@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Phạm vi của Scope</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+  <div ng-app="myApp">
+    <div class="conttainer">
+      <div class="row">
+        <div class="col-md-12">
+          <div ng-controller="controllerTop">
+            {{name}} + {{chuvu}}
+          </div>
+          <div ng-controller="controllerBottom">
+            {{name}} + {{chuvu}}
+          </div>
+          <div ng-controller="controllerJson">
+            {{user.name}} + {{user.chuvu}}
+          </div>
+          <!-- <div ng-controller="controllerJson1">
+            <!-- //Gọi khác -->
+          <!-- {{user}} + {{name}} -->
+          <!-- {{user}} + {{chuvu}} -->
+          <!-- </div> -->
+          </br>
+          </br>
+          <div ng-controller="controllerJson1">
+            <table class="table table-condensed">
+              <thead>
+                <tr>
+                  <th>Họ và Tên</th>
+                  <th>Chức Vụ</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="user in userArray">
+                  <td>{{user.name}}</td>
+                  <td>{{user.chuvu}}</td>
+
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+  <script src="app/scope.js"></script>
+
+</body>
+
+</html>

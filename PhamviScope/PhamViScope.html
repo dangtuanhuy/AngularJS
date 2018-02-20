@@ -1,14 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hello World</title>
-
-  <!-- Bootstrap -->
-  <!-- Latest compiled and minified CSS -->
+  <title>Phạm vi của Scope</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <!-- jQuery library -->
@@ -16,24 +11,19 @@
 
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-
 </head>
 
-<body ng-app>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="alert alert-info">
-          <span class="glyphicon glyphicon-asterisk"></span> {{ 'Hello' + 'World' }}
-        </div>
-      </div>
-    </div>
-
+<body>
+  <p>
+    Lần 1 = {{4*2}}
+  </p>
+  <div ng-app="myApp">
+    <p>
+      Lần 2 = {{4*2}}
+    </p>
   </div>
-
-
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+  <script src="app/scope.js"></script>
 </body>
 
 </html>
