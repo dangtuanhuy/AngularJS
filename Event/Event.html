@@ -4,13 +4,15 @@
 <head>
   <meta charset="utf-8">
   <title>Sự Kiện trong Angular JS</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <!-- jQuery library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="Event.js"></script>
 </head>
 
 <body ng-app="EventApp" ng-controller="EventController">
@@ -20,21 +22,61 @@
         <div class="panel panel-danger">
           <div class="panel panel-heading">Cách sử dụng ng-click
           </div>
-          Đây là nơi sự kiện Angular sẽ xuất hiện
-          ng-click sẽ kích hoạt sau khi bạn click chuột
+          <p>
+            Đây là nơi sự kiện ng-click sẽ kích hoạt sau khi bạn click chuột
+          </p>
+          </br>
+          <!-- ng-click xảy ra khi xuất hiện trong thẻ input -->
+          <input type="button" name="btnButton" value="Click chuột nè" id="btnButton" class="btn btn-info" ng-click="showAlert('ng-click')" />
         </div>
-        <div class="panel panel-info">
-          <div class="panel panel-heading"> Cách sử dụng ng-doubleclick
+        <!-- ng-change -->
+        <div class="panel panel-success">
+          <div class="panel panel-heading">Cách sử dụng ng-change
           </div>
-          Đây là nơi sự kiện Angular sẽ xuất hiện
+          <p>
+            Dùng trong dropdown và field. Nó làm việc khi có checkbox và radio button
+          </p>
+          </br>
+          <!-- ng-click xảy ra khi xuất hiện trong thẻ input -->
+          <!-- Dùng ng-model-->
+          <select class="form-control" ng-model="valueToStore" ng-change="showAlert('ng-change')">
+               <option value="1">Mít</option>
+               <option value="2">Ổi</option>
+               <option value="3">Cóc</option>
+               <option value="4">Xoài</option>
+             </select>
+        </div>
+
+        <!-- ng-focus -->
+        <div class="panel panel-success">
+          <div class="panel panel-heading">Cách sử dụng ng-focus
+          </div>
+          <h3>ng-focus</h3>
+          <p>It gets triggered when any element get focused using tab key or mouse click (Sử dụng phím tab hoặc click chuột)</p>
+
+          </br>
+          <!-- ng-click xảy ra khi xuất hiện trong thẻ input -->
+          <!-- Dùng ng-model-->
+          <select class="form-control" ng-model="valueToStore" ng-change="showAlert('ng-change')">
+               <option value="1">Mít</option>
+               <option value="2">Ổi</option>
+               <option value="3">Cóc</option>
+               <option value="4">Xoài</option>
+          </select>
         </div>
       </div>
 
     </div>
 
   </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-  <script src="controller.js"></script>
+
+  <script>
+    app.controller("EventController", function($scope) {
+      $scope.showAlert = function(origin) {
+        alert("Sự kiện đã xảy ra " + origin);
+      }
+    });
+  </script>
 </body>
 
 </html>
